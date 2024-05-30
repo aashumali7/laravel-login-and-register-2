@@ -3,7 +3,20 @@
 @section('main')
          <a href='/register'>Go to the register page </a>
          <h1 class="text-center">Login form </h1>
-         <form method="POST" action="">
+         @if($errors->any())
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>
+                    <ul style="list-style:none">
+                        @foreach( $errors->all() as $error)
+                                <li>{{  $error  }}</li>
+                        @endforeach
+                    </ul>
+                </strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+         @endif
+         <form method="POST" action="/login">
+            @csrf
          <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
             <input name="email" value="" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">

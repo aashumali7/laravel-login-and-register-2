@@ -8,5 +8,12 @@ Route::get('/', function () {
 });
 Route::get('/register', function () {
     return view('register');//register.blade.php
-});
+})->name('register');
+
+Route::post('/login', [AuthenticationController::class,'login'])->name('login');
+
 Route::post('/registration-user',[AuthenticationController::class,'store'])->name('abc'); //i am the route
+
+Route::get('/dashboard',function(){
+    return view('dashboard'); //dashboard.blade.php
+})->name('dashboard');

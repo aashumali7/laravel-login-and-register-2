@@ -3,6 +3,12 @@
 @section('main')
          <a href='/'>Go to the register page </a>
          <h1 class="text-center">Register form </h1>
+         @if(session('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>{{ session('success') }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+         @endif
          <form method="POST" action="{{route('abc')}}">
               @csrf
               <div class="mb-3">
