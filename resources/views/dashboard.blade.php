@@ -8,5 +8,6 @@
     <body>
         <h1>Dashboard Page</h1>
         <h2>Welcome {{session ('username')}}</h2>
+        <a href='/logout'>Logout</a>
     </body>
 </html>

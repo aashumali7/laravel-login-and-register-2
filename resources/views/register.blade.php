@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('main')
-         <a href='/'>Go to the register page </a>
+         <a href='/'>Go to the Login page </a>
          <h1 class="text-center">Register form </h1>
          @if(session('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
